@@ -3,13 +3,15 @@ package calender;
 import java.util.Scanner;
 
 public class calender {
-	private static final int[] MAX_DAYS = { 31, 28, 31, 30, 31, 30, 30, 31, 30, 31, 30, 31 };
 
-	public int getmaxDaysOfMonth(int month) {
+	private final int[] MAX_DAYS = { 31, 28, 31, 30, 31, 30, 30, 31, 30, 31, 30, 31 };
+
+	public int maxDaysofmonth(int month) {
 		return MAX_DAYS[month - 1];
+
 	}
 
-	public void printSampleCalendar() {
+	public void printsampleCalender() {
 
 		System.out.println("일   월   화   수   목   금   토");
 		System.out.println("---------------------");
@@ -22,16 +24,23 @@ public class calender {
 
 	public static void main(String[] args) {
 
-		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램.
+		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
 		Scanner scanner = new Scanner(System.in);
 		calender cal = new calender();
-		System.out.println("달을 입력하세요");
-		int month = scanner.nextInt();
 
-		System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getmaxDaysOfMonth(month));
+		System.out.println("반복 횟수를 입력하세요.");
+		int repeat = scanner.nextInt();
 
-		cal.printSampleCalendar();
+		for (int i = 0; i < repeat; i++) {
+			System.out.println("달을 입력하세요");
+			int month = scanner.nextInt();
+			System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.maxDaysofmonth(month));
 
+		}
+		System.out.println("Bye");
 		scanner.close();
+
+		// cal.printsampleCalender();
+
 	}
 }
