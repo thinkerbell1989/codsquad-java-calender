@@ -50,7 +50,5 @@ public class calender {
 		System.out.println("Bye");
 		scanner.close();
 
-		// cal.printsampleCalender();
-
 	}
 }
